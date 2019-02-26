@@ -8,7 +8,7 @@
             * {
                 font-family: Verdana, Arial, sans-serif;
             }
-            a {
+            a.item {
                 display: block;
                 margin: 3px;
             }
@@ -17,7 +17,13 @@
 
     <body>
         <?php for ($i = 1; $i <= 5; $i++) { ?>
-            <a target="poging-<?= $i ?>" href="poging-<?= $i ?>">Poging <?= $i ?></a>
+            <a class="item" target="poging-<?= $i ?>" href="poging-<?= $i ?>">Poging <?= $i ?></a>
         <?php } ?>
+        <p>
+            Find the sources on
+            <a target="github" href="https://github.com/spijkerbak/php-library-examples">
+                github
+            </a>.
+        </p>
     </body>
 </html>
