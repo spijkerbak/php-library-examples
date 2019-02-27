@@ -24,8 +24,17 @@
             <a target="github" href="https://github.com/spijkerbak/php-library-examples">github</a>.
         </p>
     </body>
+<<<<<<< HEAD
     
     <?php 
         $dummy = 1;
     ?>
+=======
+    <?php
+        $p = 3;
+        function aap() {
+        }
+    ?>
+        
+>>>>>>> master 1
 </html>
