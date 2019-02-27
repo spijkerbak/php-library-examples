@@ -24,8 +24,5 @@
             <a target="github" href="https://github.com/spijkerbak/php-library-examples">github</a>.
         </p>
     </body>
-    
-    <?php 
-        $dummy = 1;
-    ?>
+
 </html>
