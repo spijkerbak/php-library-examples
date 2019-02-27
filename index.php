@@ -20,10 +20,8 @@
             <a class="item" target="poging-<?= $i ?>" href="poging-<?= $i ?>">Poging <?= $i ?></a>
         <?php } ?>
         <p>
-            Find the sources on
-            <a target="github" href="https://github.com/spijkerbak/php-library-examples">
-                github
-            </a>.
+            Get the sources from
+            <a target="github" href="https://github.com/spijkerbak/php-library-examples">github</a>.
         </p>
     </body>
 </html>
