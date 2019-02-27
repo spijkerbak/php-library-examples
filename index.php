@@ -25,4 +25,10 @@
         </p>
     </body>
 
+    <?php
+        $p = 3;
+        function aap() {
+        }
+    ?>
+        
 </html>
