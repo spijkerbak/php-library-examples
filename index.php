@@ -24,4 +24,10 @@
             <a target="github" href="https://github.com/spijkerbak/php-library-examples">github</a>.
         </p>
     </body>
+    <?php
+        $p = 3;
+        function aap() {
+        }
+    ?>
+        
 </html>
