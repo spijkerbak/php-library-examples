@@ -25,7 +25,7 @@
         </p>
     </body>
     
-    <php 
+    <?php 
         $dummy = 1;
     ?>
 </html>
