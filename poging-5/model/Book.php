@@ -50,5 +50,5 @@ class Book {
     function getValues() {
         return [$this->author, $this->year, $this->title, $this->isbn];
     }
-
+    
 }

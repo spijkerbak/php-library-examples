@@ -37,7 +37,7 @@ class Library {
         $this->addBook(new Book($this, '9780593078754', 2017, 'Origin', 'Dan Brown'));
 
         $this->getBook('9789043026970')->addCopies(1);
-        //$this->getBook('9789026331404')->addCopies(3);
+        $this->getBook('9789026331404')->addCopies(3);
         $this->getBook('9789401605113')->addCopies(4);
         $this->getBook('9789057523137')->addCopies(3);
         $this->getBook('9789086664467')->addCopies(10);
