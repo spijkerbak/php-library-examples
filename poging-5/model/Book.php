@@ -1,18 +1,20 @@
 <?php
 
-class Book {
+class Book
+{
 
     // fields
-    private $isbn;
-    private $year;
-    private $title;
-    private $author;
+    private string $isbn;
+    private int $year;
+    private string $title;
+    private string $author;
     // relations
     private $copies = [];
-    private $library; // book knows library to register copies
+    private Library $library; // book knows library to register copies
 
     // constructor
-    function __construct($library, $isbn, $year, $title, $author) {
+    function __construct(Library $library, string $isbn, int $year, string $title, string $author)
+    {
         $this->library = $library;
         $this->isbn = $isbn;
         $this->year = $year;
@@ -20,11 +22,13 @@ class Book {
         $this->author = $author;
     }
 
-    function getISBN() {
+    function getISBN(): string
+    {
         return $this->isbn;
     }
 
-    function addCopies($count) {
+    function addCopies(int $count)
+    {
         for ($i = 0; $i < $count; $i++) {
             $copy = new Copy($this);
             $this->copies[] = $copy;
@@ -32,7 +36,8 @@ class Book {
         }
     }
 
-    function getActiveCopyNumbers() {
+    function getActiveCopyNumbers(): array
+    {
         $numbers = [];
         foreach ($this->copies as $copy) {
             if (!$copy->isWrittenOff()) {
@@ -43,12 +48,14 @@ class Book {
     }
 
     // 'view' methods
-    static function getHeaderNames() {
+    static function getHeaderNames(): array
+    {
         return ['Schrijver', 'Jaar', 'Titel', 'ISBN'];
     }
 
-    function getValues() {
+    function getValues(): array
+    {
         return [$this->author, $this->year, $this->title, $this->isbn];
     }
-    
+
 }

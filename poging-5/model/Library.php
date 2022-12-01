@@ -1,34 +1,41 @@
 <?php
 
-class Library {
+class Library
+{
 
     private $books = []; // all books, indexed by isbn
     private $copies = []; // all copies, indexed by copyNumber
 
-    function addBook($book) {
+    function addBook(Book $book)
+    {
         $isbn = $book->getISBN();
         $this->books[$isbn] = $book;
     }
 
-    function getBook($isbn) {
+    function getBook(string $isbn): Book
+    {
         return $this->books[$isbn];
     }
 
-    function writeOff($copyNumber) {
+    function writeOff(int $copyNumber): void
+    {
         $copy = $this->copies[$copyNumber];
         $copy->writeOff();
     }
 
-    function addCopy($copy) {
+    function addCopy(Copy $copy): void
+    {
         $copyNumber = $copy->getNumber();
         $this->copies[$copyNumber] = $copy;
     }
 
-    function getBooks() {
+    function getBooks(): array
+    {
         return $this->books;
     }
 
-    function init() {
+    function init(): void
+    {
         $this->addBook(new Book($this, '9789043026970', 2013, 'Computernetwerken, een top-down benadering', 'James F. Kurose, Keith W. Ross'));
         $this->addBook(new Book($this, '9789026331404', 2016, 'Huidpijn', 'Saskia Noort'));
         $this->addBook(new Book($this, '9789401605113', 2016, 'Ibiza', 'Kiki van Dijk'));

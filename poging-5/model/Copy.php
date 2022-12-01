@@ -1,16 +1,18 @@
 <?php
 
-class Copy {
+class Copy
+{
 
-    private static $copyNumber = 1000; // first unique copy number
+    private static int $copyNumber = 1000; // first unique copy number
     // fields
-    private $number;
-    private $dateIn;
-    private $dateOut;
+    private int $number;
+    private string $dateIn;
+    private ?string $dateOut;
     // relations
-    private $book;
+    private string $book;
 
-    function __construct($book) {
+    function __construct(Book $book)
+    {
         $this->book = $book;
         $this->dateIn = date('Y-m-d');
         $this->dateOut = null;
@@ -18,19 +20,23 @@ class Copy {
         self::$copyNumber++;
     }
 
-    function writeOff() {
+    function writeOff(): void
+    {
         $this->dateOut = date('Y-m-d');
     }
 
-    function isWrittenOff() {
+    function isWrittenOff(): bool
+    {
         return $this->dateOut !== null;
     }
-    
-    function getNumber() {
+
+    function getNumber(): int
+    {
         return $this->number;
     }
 
-    function __toString() {
+    function __toString(): string
+    {
         return "{$this->book} {$this->number}";
     }
 
