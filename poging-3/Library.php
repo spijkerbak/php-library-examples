@@ -1,25 +1,29 @@
 <?php
 
-class Library {
+class Library
+{
 
-    private $books = [];
+    private $books = []; // array of Book objects
 
-    function addBook($book) {
+    function addBook(Book $book): void
+    {
         $isbn = $book->getISBN();
         $this->books[$isbn] = $book;
     }
 
-    function getBook($isbn) {
+    function getBook(string $isbn): ?Book
+    {
         return $this->books[$isbn];
     }
 
-    function showInventory() {
+    function showInventory(): void
+    {
         foreach ($this->books as $book) {
             echo $book . "\n";
             $numbers = $book->getCopyNumbers();
             $count = count($numbers);
             echo "  ";
-            switch($count) {
+            switch ($count) {
                 case 0:
                     echo "geen exemplaren";
                     break;

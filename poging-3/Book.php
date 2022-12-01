@@ -1,45 +1,52 @@
 <?php
 
-class Book {
+class Book
+{
 
     // fields
-    private $isbn;
-    private $year;
-    private $title;
-    private $author;
-    
+    private string $isbn;
+    private string $year;
+    private string $title;
+    private string $author;
+
     // relations
-    private $copies = [];
+    private $copies = []; // array of Copy objects
 
     // methods
-    function __construct($isbn, $year, $title, $author) {
+    function __construct(string $isbn, string $year, string $title, string $author)
+    {
         $this->isbn = $isbn;
         $this->year = $year;
         $this->title = $title;
         $this->author = $author;
     }
 
-    function __toString() {
+    function __toString(): string
+    {
         return "{$this->author} ({$this->year}). {$this->title}. ";
     }
 
-    function getISBN() {
+    function getISBN(): string
+    {
         return $this->isbn;
     }
 
-    function addCopies($count) {
+    function addCopies(int $count): void
+    {
         for ($i = 0; $i < $count; $i++) {
             $this->copies[] = new Copy($this);
         }
     }
 
-    function countCopies() {
+    function countCopies(): int
+    {
         return count($this->copies);
     }
 
-    function getCopyNumbers() {
+    function getCopyNumbers(): array
+    {
         $numbers = [];
-        foreach($this->copies as $copy) {
+        foreach ($this->copies as $copy) {
             $numbers[] = $copy->getNumber();
         }
         return $numbers;

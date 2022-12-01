@@ -4,18 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Bibliotheek</title>
-    <style>
-        * {
-            font-family: Verdana, Arial, sans-serif;
-        }
-        nav a {
-            display: block;
-            margin: 3px;
-        }
-        footer p {
-            color: gray;
-        }
-    </style>
+    <link type="text/css" rel="stylesheet" href="layout.css">
 </head>
 
 <body>

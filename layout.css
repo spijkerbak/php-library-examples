@@ -1,0 +1,12 @@
+* {
+    font-family: sans-serif;
+}
+
+nav a {
+    display: block;
+    margin: 3px;
+}
+
+footer p {
+    color: gray;
+}

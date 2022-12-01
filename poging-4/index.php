@@ -1,7 +1,8 @@
 <?php
 
 // Report all PHP errors
-error_reporting(E_ALL);
+error_reporting(-1);
+ini_set('display_errors', -1);
 
 // No HTML,just plain text
 header('content-type: text/plain');

@@ -8,21 +8,24 @@ header('content-type: text/plain');
 
 echo "Bibliotheek - poging 1\n\n";
 
-class Book {
+class Book
+{
 
     // fields
-    private $isbn;
-    private $title;
-    private $author;
+    private string $isbn;
+    private string $title;
+    private string $author;
 
     // constructor
-    function __construct($isbn, $title, $author) {
+    function __construct(string $isbn, string $title, string $author)
+    {
         $this->isbn = $isbn;
         $this->title = $title;
         $this->author = $author;
     }
 
-    function __toString() {
+    function __toString(): string
+    {
         return "{$this->isbn} {$this->title}; {$this->author}";
     }
 
@@ -45,4 +48,3 @@ echo "Bibliotheek\n\n";
 foreach ($books as $book) {
     echo "$book\n";
 }
-    

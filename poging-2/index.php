@@ -8,62 +8,70 @@ header('content-type: text/plain');
 
 echo "Bibliotheek - poging 2\n\n";
 
-class Book {
+class Book
+{
 
     // fields
-    private $isbn;
-    private $year;
-    private $title;
-    private $author;
-    
+    private string $isbn;
+    private string $year;
+    private string $title;
+    private string $author;
+
     // relations
     private $copies = [];
 
     // methods
-    function __construct($isbn, $year, $title, $author) {
+    function __construct(string $isbn, string $year, string $title, string $author)
+    {
         $this->isbn = $isbn;
         $this->year = $year;
         $this->title = $title;
         $this->author = $author;
     }
 
-    function __toString() {
+    function __toString(): string
+    {
         return "{$this->author} ({$this->year}). {$this->title}. ";
     }
 
-    function addCopy($number) {
+    function addCopy(int $number): void
+    {
         $copy = new Copy($this, $number);
         $this->copies[] = $copy;
     }
 
-    function countCopies() {
+    function countCopies(): int
+    {
         return count($this->copies);
     }
 
 }
 
-class Copy {
-
+class Copy
+{
     // fields
-    private $number;
-    private $dateIn;
-    private $dateOut;
-    
+    private int $number;
+    private string $dateIn;
+    private string $dateOut;
+
     // relations
     private $book;
 
     // methods
-    function __construct($book, $number) {
+    function __construct(Book $book, int $number)
+    {
         $this->book = $book;
         $this->number = $number;
         $this->dateIn = date('Y-m-d');
     }
 
-    function writeOff() {
+    function writeOff() : void
+    {
         $this->dateOut = date('Y-m-d');
     }
 
-    function __toString() {
+    function __toString() : string
+    {
         return "{$this->book} {$this->number}";
     }
 
@@ -95,4 +103,3 @@ $books[3]->addCopy(113);
 foreach ($books as $book) {
     echo $book->countCopies() . ' x ' . $book . "\n";
 }
-    
