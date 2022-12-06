@@ -1,16 +1,13 @@
+<!DOCTYPE html>
 <?php
 
 // Report all PHP errors
-error_reporting(-1); ini_set('display_errors', -1);
+error_reporting(-1);
+ini_set('display_errors', -1);
 
-// No HTML,just plain text
-header('content-type: text/plain');
-
-echo "Bibliotheek - poging 3\n\n";
-
-include('Book.php');
-include('Copy.php');
-include('Library.php');
+include('model/Book.php');
+include('model/Copy.php');
+include('model/Library.php');
 
 $library = new Library();
 
@@ -28,4 +25,20 @@ $library->getBook('9789057523137')->addCopies(12);
 $library->getBook('9789086664467')->addCopies(1);
 $library->getBook('9780593078754')->addCopies(2);
 
-$library->showInventory();    
+?>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Poging 3</title>
+    <link rel="stylesheet" type="text/css" href="../style/general.css">
+</head>
+
+<body>
+    <h1>Bibliotheek - poging 3</h1>
+    <?php
+    $library->showInventory();
+    ?>
+</body>
+
+</html>

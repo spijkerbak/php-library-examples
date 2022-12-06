@@ -1,14 +1,10 @@
-
 * {
     font-family: Verdana, Arial, sans-serif;
 }
 
-a {
-    display: block;
-    margin: 3px;
-}
-
-table, th, td {
+table,
+th,
+td {
     border: 1px solid black;
     border-collapse: collapse;
 }
@@ -17,8 +13,19 @@ th {
     text-align: left;
 }
 
-th, td {
+th,
+td {
     max-width: 300px;
     vertical-align: top;
     padding: 3px;
+}
+
+nav a {
+    margin: 3px;
+    padding: 3px;
+    border: 1px solid blue;
+}
+
+footer p {
+    color: gray;
 }

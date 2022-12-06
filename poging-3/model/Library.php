@@ -18,11 +18,11 @@ class Library
 
     function showInventory(): void
     {
+        echo "<table>\n";
         foreach ($this->books as $book) {
-            echo $book . "\n";
             $numbers = $book->getCopyNumbers();
             $count = count($numbers);
-            echo "  ";
+            echo "<tr><td>$book</td><td>";
             switch ($count) {
                 case 0:
                     echo "geen exemplaren";
@@ -34,8 +34,11 @@ class Library
                     echo $count . " exemplaren: ";
                     break;
             }
+            echo "</td><td>";
             echo implode(', ', $numbers) . "\n\n";
+            echo "</td></tr>\n";
         }
+        echo "</table>\n";
     }
 
 }

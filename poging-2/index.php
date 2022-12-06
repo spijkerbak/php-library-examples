@@ -1,12 +1,9 @@
+<!DOCTYPE html>
 <?php
 
 // Report all PHP errors
-error_reporting(-1); ini_set('display_errors', -1);
-
-// No HTML,just plain text
-header('content-type: text/plain');
-
-echo "Bibliotheek - poging 2\n\n";
+error_reporting(-1);
+ini_set('display_errors', -1);
 
 class Book
 {
@@ -65,12 +62,12 @@ class Copy
         $this->dateIn = date('Y-m-d');
     }
 
-    function writeOff() : void
+    function writeOff(): void
     {
         $this->dateOut = date('Y-m-d');
     }
 
-    function __toString() : string
+    function __toString(): string
     {
         return "{$this->book} {$this->number}";
     }
@@ -100,6 +97,25 @@ $books[3]->addCopy(111);
 $books[3]->addCopy(112);
 $books[3]->addCopy(113);
 
-foreach ($books as $book) {
-    echo $book->countCopies() . ' x ' . $book . "\n";
-}
+?>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Poging 2</title>
+    <link rel="stylesheet" type="text/css" href="../style/general.css">
+</head>
+
+<body>
+    <h1>Bibliotheek - poging 2</h1>
+    <?php
+    // write output
+    foreach ($books as $book) {
+        echo "<p>";
+        echo $book->countCopies() . ' x ' . $book . "\n";
+        echo "</p>";
+    }
+        ?>
+</body>
+
+</html>

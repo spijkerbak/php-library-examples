@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+
 // Report all PHP errors
 error_reporting(-1);
 ini_set('display_errors', -1);
@@ -43,17 +44,17 @@ $books[] = new Book('9780593078754', 'Origin', 'Dan Brown');
 <head>
     <meta charset="UTF-8">
     <title>Poging 1</title>
-    <link rel="stylesheet" type="text/css" href="style/general.css">
+    <link rel="stylesheet" type="text/css" href="../style/general.css">
 </head>
 
 <body>
     <h1>Bibliotheek - poging 1</h1>
     <?php
-        // write output
-        foreach ($books as $book) {
-            echo "<p>$book</p>\n";
-        }
-        ?>
+    // write output
+    foreach ($books as $book) {
+        echo "<p>$book</p>\n";
+    }
+    ?>
 </body>
 
 </html>

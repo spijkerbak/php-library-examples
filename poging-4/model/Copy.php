@@ -3,7 +3,7 @@
 class Copy
 {
 
-    private static $copyNumber = 1000; // first unique copy number
+    private static int $copyNumber = 1000; // first unique copy number
     // fields
     private int $number;
     private string $dateIn;
@@ -20,12 +20,7 @@ class Copy
         self::$copyNumber++;
     }
 
-    function __toString(): string
-    {
-        return "{$this->book} {$this->number}";
-    }
-
-    function writeOff():void
+    function writeOff(): void
     {
         $this->dateOut = date('Y-m-d');
     }
@@ -35,9 +30,14 @@ class Copy
         return $this->dateOut !== null;
     }
 
-    function getNumber() : int
+    function getNumber(): int
     {
         return $this->number;
+    }
+
+    function __toString(): string
+    {
+        return "{$this->book} {$this->number}";
     }
 
 }

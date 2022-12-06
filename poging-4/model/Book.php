@@ -8,10 +8,9 @@ class Book
     private int $year;
     private string $title;
     private string $author;
-
     // relations
     private $copies = [];
-    private $library; // book knows library to register copies
+    private Library $library; // book knows library to register copies
 
     // constructor
     function __construct(Library $library, string $isbn, int $year, string $title, string $author)
@@ -23,17 +22,12 @@ class Book
         $this->author = $author;
     }
 
-    function __toString(): string
-    {
-        return "{$this->author} ({$this->year}). {$this->title}. ";
-    }
-
     function getISBN(): string
     {
         return $this->isbn;
     }
 
-    function addCopies(int $count): void
+    function addCopies(int $count)
     {
         for ($i = 0; $i < $count; $i++) {
             $copy = new Copy($this);
@@ -51,6 +45,17 @@ class Book
             }
         }
         return $numbers;
+    }
+
+    // 'view' methods
+    static function getHeaderNames(): array
+    {
+        return ['Schrijver', 'Jaar', 'Titel', 'ISBN'];
+    }
+
+    function getValues(): array
+    {
+        return [$this->author, $this->year, $this->title, $this->isbn];
     }
 
 }
