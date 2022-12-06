@@ -9,7 +9,7 @@ class Copy
     private string $dateIn;
     private ?string $dateOut;
     // relations
-    private string $book;
+    private Book $book;
 
     function __construct(Book $book)
     {

@@ -1,12 +1,8 @@
+<!DOCTYPE html>
 <?php
-
 // Report all PHP errors
-error_reporting(-1); ini_set('display_errors', -1);
-
-// No HTML,just plain text
-header('content-type: text/plain');
-
-echo "Bibliotheek - poging 1\n\n";
+error_reporting(-1);
+ini_set('display_errors', -1);
 
 class Book
 {
@@ -41,10 +37,23 @@ $books[] = new Book('9789401605113', 'Ibiza', 'Kiki van Dijk');
 $books[] = new Book('9789043026970', 'Computernetwerken, een top-down benadering', 'James F. Kurose, Keith W. Ross');
 $books[] = new Book('9789086664467', 'Karakterstrijd', 'Marco Verkooijen');
 $books[] = new Book('9780593078754', 'Origin', 'Dan Brown');
+?>
+<html lang="nl">
 
-// write output
-echo "Bibliotheek\n\n";
+<head>
+    <meta charset="UTF-8">
+    <title>Poging 1</title>
+    <link rel="stylesheet" type="text/css" href="style/general.css">
+</head>
 
-foreach ($books as $book) {
-    echo "$book\n";
-}
+<body>
+    <h1>Bibliotheek - poging 1</h1>
+    <?php
+        // write output
+        foreach ($books as $book) {
+            echo "<p>$book</p>\n";
+        }
+        ?>
+</body>
+
+</html>
