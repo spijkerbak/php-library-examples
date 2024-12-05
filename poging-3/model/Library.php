@@ -18,25 +18,35 @@ class Library
 
     function showInventory(): void
     {
-        echo "<table>\n";
+?>
+<table>
+    <tr>
+        <th>boek</th>
+        <th>isbn</th>
+        <th>aantal</th>
+        <th>nummers</th>
+    </tr>
+    <?php
         foreach ($this->books as $book) {
             $numbers = $book->getCopyNumbers();
             $count = count($numbers);
-            echo "<tr><td>$book</td><td>";
+            echo "<tr>";
+            echo "<td>$book</td>";
+            echo "<td>{$book->getISBN()}</td>";
+            echo '<td class="number">';
             switch ($count) {
                 case 0:
-                    echo "geen exemplaren";
-                    break;
-                case 1:
-                    echo $count . " exemplaar: ";
+                    echo '';
                     break;
                 default:
-                    echo $count . " exemplaren: ";
+                    echo $count;
                     break;
             }
-            echo "</td><td>";
-            echo implode(', ', $numbers) . "\n\n";
-            echo "</td></tr>\n";
+            echo "</td>";
+            echo "<td>";
+            echo implode(', ', $numbers);
+            echo "</td>";
+            echo "</tr>\n";
         }
         echo "</table>\n";
     }

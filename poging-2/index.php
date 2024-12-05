@@ -112,10 +112,10 @@ $books[3]->addCopy(113);
     // write output
     foreach ($books as $book) {
         echo "<p>";
-        echo $book->countCopies() . ' x ' . $book . "\n";
+        echo $book->countCopies() . " x $book \n";
         echo "</p>";
     }
-        ?>
+    ?>
 </body>
 
 </html>

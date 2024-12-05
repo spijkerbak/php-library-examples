@@ -35,9 +35,4 @@ class Copy
         return $this->number;
     }
 
-    function __toString(): string
-    {
-        return "{$this->book} {$this->number}";
-    }
-
 }

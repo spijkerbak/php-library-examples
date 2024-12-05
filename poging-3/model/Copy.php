@@ -2,7 +2,7 @@
 
 class Copy {
 
-    private static int $copyNumber = 1000; // first unique copy number
+    private static int $copyNumber = 500; // first unique copy number
     // fields
     private int $number;
     private string $dateIn;
